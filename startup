@@ -1,4 +1,15 @@
-             app.UseSwagger();
+public IServiceProvider ConfigureServices(IServiceCollection services)
+{
+...
+services.AddSwaggerExtension(Configuration);
+...
+}
+
+public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env, ILoggerFactory loggerFactory)
+{
+....
+
+            app.UseSwagger();
 
             app.UseSwaggerUI(c =>
             {
@@ -7,3 +18,6 @@
                 c.OAuthClientId(string.Empty);
                 c.OAuthClientSecret(string.Empty);
             });
+
+......
+}
